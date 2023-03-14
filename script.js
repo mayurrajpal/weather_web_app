@@ -29,23 +29,23 @@ const getWeather = async (city) => {
     climate.textContent = main;
     tempvalue.textContent = Math.round(feels_like - 273);
     if (id < 300 && id >= 200) {
-      tempicon.src = "./icons/thunderstorm.svg";
+      tempicon.src = "./thunderstorm.svg";
     } else if (id < 400 && id >= 300) {
-      tempicon.src = "./icons/drizzle.svg";
+      tempicon.src = "./drizzle.svg";
     } else if (id < 600 && id >= 500) {
-      tempicon.src = "./icons/rain.svg";
+      tempicon.src = "./rain.svg";
     } else if (id < 700 && id >= 600) {
-      tempicon.src = "./icons/snow.svg";
+      tempicon.src = "./snow.svg";
     } else if (id > 800) {
-      tempicon.src = "./icons/clouds.svg";
+      tempicon.src = "./clouds.svg";
     } else if (id == 800) {
-      tempicon.src = "./icons/sun.svg";
+      tempicon.src = "./sun.svg";
     }else if (id == 701) {
-      tempicon.src = "./icons/mist.svg";
+      tempicon.src = "./mist.svg";
     }else if (id == 711) {
-      tempicon.src = "./icons/carbon-dioxide.svg";
+      tempicon.src = ".//carbon-dioxide.svg";
     }else if (id == 721) {
-      tempicon.src = "./icons/haze.svg";
+      tempicon.src = ".//haze.svg";
     }
   } catch (error) {
     alert("city not found");
