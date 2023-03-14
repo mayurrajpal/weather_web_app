@@ -118,7 +118,7 @@ input
 border: none;
 }
 input::placeholder{
-    color: #a6a4a4;
+    color: #3c3b3b;
 }
 video{
     position: absolute;
