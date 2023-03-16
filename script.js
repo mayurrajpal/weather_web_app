@@ -2,6 +2,8 @@ let loc = document.getElementById("location");
 let tempicon = document.getElementById("temp-icon");
 let tempvalue = document.getElementById("temp-value");
 let climate = document.getElementById("climate");
+let windspeed=document.getElementsByClassName("windspeed");
+let humidity=document.getElementsByClassName("humidity");
 let iconfile;
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
@@ -23,11 +25,16 @@ const getWeather = async (city) => {
     const weatherData = await response.json();
     console.log(weatherData);
     const { name } = weatherData;
-    const { feels_like } = weatherData.main;
+    const { feels_like,humidity } = weatherData.main;
     const { id, main } = weatherData.weather[0];
+    const {speed} = weatherData.wind;
     loc.textContent = name;
     climate.textContent = main;
     tempvalue.textContent = Math.round(feels_like - 273);
+    console.log(humidity,speed);
+    document.querySelector(".humidity").innerText=humidity+"%";
+    document.querySelector(".windspeed").innerText=speed+"km/h";
+
     if (id < 300 && id >= 200) {
       tempicon.src = "./thunderstorm.svg";
     } else if (id < 400 && id >= 300) {
